@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./word-add-in/assets/vespper-cat.svg" alt="Vespper">
+  <img src="./word-add-in/assets/vespper-cat.svg" alt="Vespper" width="160">
 </p>
 
 # Vespper Examples
