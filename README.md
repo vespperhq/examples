@@ -25,7 +25,7 @@ Never commit that file or expose its values in frontend code.
 
 ## Examples
 
-- `[word-add-in/](./word-add-in/)` - a Microsoft Word add-in with a React task pane, a Mastra agent, streamed tracked changes, selected-text context, and pasted-image support.
+- [word-add-in/](./word-add-in/) — a Microsoft Word add-in with a React task pane, a Mastra agent, streamed tracked changes, selected-text context, and pasted-image support.
 
 More examples will be added over time.
 
