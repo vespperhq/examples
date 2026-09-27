@@ -1,0 +1,21 @@
+{
+  "name": "Vespper",
+  "guid": "asc.{A79D9B7A-2BFA-4EB1-A4C5-7EAD5B6F80D1}",
+  "baseUrl": "",
+  "version": "0.1.0",
+  "minVersion": "8.2.0",
+  "variations": [
+    {
+      "description": "Edit the current DOCX with Vespper",
+      "url": "index.html",
+      "icons": ["icon.svg"],
+      "EditorsSupport": ["word"],
+      "isViewer": false,
+      "type": "panelRight",
+      "initDataType": "none",
+      "initData": "",
+      "initOnSelectionChanged": true,
+      "buttons": []
+    }
+  ]
+}

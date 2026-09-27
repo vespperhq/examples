@@ -1,0 +1,6 @@
+.env
+node_modules/
+data/
+plugin/plugin.bundle.js
+plugin/plugin.bundle.js.map
+plugin/plugin.css

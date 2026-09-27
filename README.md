@@ -26,6 +26,7 @@ Never commit that file or expose its values in frontend code.
 ## Examples
 
 - [word-add-in/](./word-add-in/) — a Microsoft Word add-in with a React task pane, a Mastra agent, streamed tracked changes, selected-text context, and pasted-image support.
+- [onlyoffice-add-in/](./onlyoffice-add-in/) — a local Dockerized ONLYOFFICE editor with the same Vespper chat workflow and live DOCX updates.
 
 More examples will be added over time.
 

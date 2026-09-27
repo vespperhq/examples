@@ -1,0 +1,51 @@
+{
+  "name": "vespper-onlyoffice-add-in",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local ONLYOFFICE editor with the Vespper DOCX editing agent",
+  "scripts": {
+    "build": "webpack --mode development",
+    "dev": "npm run build && concurrently -k \"webpack --mode development --watch\" \"tsx server/server.ts\"",
+    "start": "docker compose up -d && npm run dev",
+    "stop": "docker compose down",
+    "test": "tsx --test server/*.test.ts",
+    "typecheck": "tsc -p tsconfig.check.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@mastra/core": "1.38.0",
+    "@mastra/mcp": "1.17.2",
+    "@streamparser/json": "0.0.26",
+    "docx": "^9.5.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "multer": "^2.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "swr": "^2.3.6",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^26.0.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "concurrently": "^9.2.1",
+    "css-loader": "^7.1.5",
+    "mini-css-extract-plugin": "^2.10.2",
+    "postcss": "^8.5.28",
+    "postcss-loader": "^8.2.1",
+    "tailwindcss": "^4.3.3",
+    "ts-loader": "^9.5.4",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  }
+}

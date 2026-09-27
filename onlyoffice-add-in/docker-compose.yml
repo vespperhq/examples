@@ -1,0 +1,13 @@
+services:
+  onlyoffice:
+    image: onlyoffice/documentserver:9.2
+    platform: linux/amd64
+    ports:
+      - "8080:80"
+    environment:
+      JWT_ENABLED: "false"
+      ALLOW_PRIVATE_IP_ADDRESS: "true"
+      ALLOW_META_IP_ADDRESS: "true"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

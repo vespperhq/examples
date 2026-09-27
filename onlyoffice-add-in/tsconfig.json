@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@mastra/core/agent": ["./node_modules/@mastra/core/dist/agent/agent"],
+      "@mastra/core/tools": ["./node_modules/@mastra/core/dist/tools/tool"]
+    }
+  },
+  "include": ["src/**/*", "server/**/*", "../word-add-in/add-in/src/**/*"],
+  "exclude": [
+    "../word-add-in/add-in/src/index.tsx",
+    "../word-add-in/add-in/src/office/document.ts",
+    "../word-add-in/add-in/src/hooks/useWordSelection.ts"
+  ]
+}
