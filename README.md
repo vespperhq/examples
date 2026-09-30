@@ -55,16 +55,87 @@ You can also run the workflow manually from the Actions tab. An existing local
 checkout still needs the pull and submodule-update commands above; automation
 updates GitHub, not files on your computer.
 
-### Adding an example
+### Creating a new example inside this folder
 
-Create and push its standalone public repository, then add it to this collection:
+Use the [create-example helper](scripts/create-example.sh) to start a new project
+directly inside `examples/`. You need Git and the [GitHub CLI](https://cli.github.com/),
+signed in with an account that can create public repositories in `vespperhq`:
+
+```bash
+gh auth login --hostname github.com
+```
+
+From this collection's root, choose a new name and run:
+
+```bash
+git pull --ff-only
+bash scripts/create-example.sh google-docs-add-in "A Google Docs example"
+```
+
+Replace `google-docs-add-in` with your project's name. **This command creates and
+publishes a public GitHub repository.** It creates a folder with its own Git
+history, a README, and a `.gitignore` for local environment files, then registers
+the folder as a submodule:
+
+```text
+examples/google-docs-add-in/  →  vespperhq/google-docs-add-in
+```
+
+The helper stages `.gitmodules` and the new pointer. Add a link to the example in
+the Examples list above, then review and publish the collection change:
+
+```bash
+git add README.md
+git diff --cached --submodule=short
+git commit -m "Add google-docs-add-in"
+git push origin HEAD:main
+```
+
+You can now build the project inside that folder. Commit and push its code from
+there, as you would in any standalone repository:
+
+```bash
+cd google-docs-add-in
+# Add or edit your project files.
+git add .
+git diff --cached
+git commit -m "Build the example"
+git push
+```
+
+After the initial registration, the existing automation updates the collection's
+pointer whenever it detects new commits. No per-example workflow or secret is
+required. Existing folders are never overwritten by the helper; in particular,
+running it will not publish another local project accidentally.
+
+#### If setup stops partway through
+
+The helper keeps any files and repository it created. Check the error and fix
+the cause, such as authentication or organization permissions. If the GitHub
+repository was not created, finish publishing the starter folder with:
+
+```bash
+gh repo create vespperhq/google-docs-add-in --public \
+  --source ./google-docs-add-in --remote origin --push
+```
+
+If the GitHub repository already exists, check the folder's `git remote -v`, add
+its `origin` URL if missing, and run `git push -u origin main` from that folder.
+Then, from the collection root, use the registration steps below if it is not
+already listed in `.gitmodules`. If registration completed, review the staged
+changes and commit them normally. Do not delete an existing project to rerun
+the helper.
+
+### Adding an existing repository
+
+For a standalone public repository that is already on GitHub:
 
 ```bash
 git submodule add -b main https://github.com/vespperhq/your-example.git your-example
 # Add the example to the list above.
 git add .gitmodules README.md your-example
 git commit -m "Add your-example"
-git push
+git push origin HEAD:main
 ```
 
 Use the example's actual branch name if it differs from `main`. The existing
