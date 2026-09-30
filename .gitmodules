@@ -1,0 +1,4 @@
+[submodule "word-add-in"]
+	path = word-add-in
+	url = https://github.com/vespperhq/word-add-in.git
+	branch = main

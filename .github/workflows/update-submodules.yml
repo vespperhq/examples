@@ -1,0 +1,32 @@
+name: Update example submodules
+
+on:
+  schedule:
+    - cron: '3-58/5 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .gitmodules
+      - .github/scripts/update-submodules.sh
+      - .github/workflows/update-submodules.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-example-submodules
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'vespperhq/examples' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the examples collection
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+      - name: Update to the latest example commits
+        run: bash .github/scripts/update-submodules.sh
