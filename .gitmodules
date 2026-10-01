@@ -2,3 +2,7 @@
 	path = word-add-in
 	url = https://github.com/vespperhq/word-add-in.git
 	branch = main
+[submodule "onlyoffice-add-in"]
+	path = onlyoffice-add-in
+	url = https://github.com/vespperhq/onlyoffice-add-in.git
+	branch = main
