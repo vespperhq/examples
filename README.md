@@ -28,6 +28,7 @@ Never commit that file or expose its values in frontend code.
 
 - [word-add-in](https://github.com/vespperhq/word-add-in) — a Microsoft Word add-in with a React task pane, a Mastra agent, streamed tracked changes, selected-text context, and pasted-image support.
 - [onlyoffice-add-in](https://github.com/vespperhq/onlyoffice-add-in) — a local Dockerized ONLYOFFICE Docs editor with the same Vespper chat workflow, live DOCX updates, and preserved tracked changes.
+- [eigenpal-docx-editor](https://github.com/vespperhq/eigenpal-docx-editor) — a browser app built on EigenPal's docx-editor, with a chat beside the document, suggestion cards, and tracked changes streamed in through the document refresh API.
 
 More examples will be added over time.
 

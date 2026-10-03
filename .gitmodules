@@ -6,3 +6,7 @@
 	path = onlyoffice-add-in
 	url = https://github.com/vespperhq/onlyoffice-add-in.git
 	branch = main
+[submodule "eigenpal-docx-editor"]
+	path = eigenpal-docx-editor
+	url = https://github.com/vespperhq/eigenpal-docx-editor.git
+	branch = main
